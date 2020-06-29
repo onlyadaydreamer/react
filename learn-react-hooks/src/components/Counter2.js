@@ -48,8 +48,8 @@ function App(){
         <>
         <CounterContext1.Provider value={{state,dispatch}}>
             <Counter1/>
-            
         </CounterContext1.Provider>
+
         <CounterContext2.Provider value={{state,dispatch}}>
             <Counter2/>
             <Counter3/>
@@ -67,7 +67,10 @@ function Counter(){
     let [number,setNumber] = useState(0);
     //会在每次渲染完成执行副使用
     useEffect(()=>{
-        fetch('/user.json').then(res=>res.json()).then(res=>setNumber(number+res.number));
+        console.log(1);
+        /* fetch('/user.json').then(res=>res.json()).then(res => {
+            console.log('res', res);
+        }); */
     })
     return (
         <div>

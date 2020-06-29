@@ -20,10 +20,10 @@ const createStore: StoreCreator = <S, A extends Action, Ext, StateExt>(
   }
   const dispatch: Dispatch<A> = <T extends A>(action: T): T => {
     currentState = reducer(currentState, action);
-    currentListeners.forEach((l) => l());
+    currentListeners.forEach((l) => l());// 订阅相关
     return action; // IMP: 这一步非常重要
   };
-  dispatch({ type: "@@REDUX/INIT" } as A);// 立马派发一下
+  dispatch({ type: "@@REDUX/INIT" } as A);// 立马派发一下,这样根状态就有了初始状态
   const subscribe: Subscribe = (listener: Listener): Unsubscribe => {
     currentListeners.push(listener);
     return function () {
