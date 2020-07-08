@@ -28,3 +28,4 @@ function getRandomColor(){
     }
    
 }
+console.log('master1');
