@@ -1,4 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './components/Counter2';
-ReactDOM.render(<Counter />,document.getElementById('root'));
+import components from './components/hooks';
+ReactDOM.render(<components.Counter />, document.getElementById('root'));
