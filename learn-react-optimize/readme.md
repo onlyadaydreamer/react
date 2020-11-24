@@ -1,0 +1,1 @@
+npx webpack --config webpack.skeleton.js

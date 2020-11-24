@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
+// FixedSizeList 固定长度列表,只渲染可视区域的内容
 import {FixedSizeList as List} from './react-window';
 //index 代表索引 style代表样式
 const Row = ({index,style})=>(
@@ -28,4 +29,3 @@ function getRandomColor(){
     }
    
 }
-console.log('master1');

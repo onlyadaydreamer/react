@@ -3,11 +3,12 @@
 * @author: zhangxing
 * @Date: 2020-07-07 14:27:22
 * @LastEditors: zhangxing
-* @LastEditTime: 2020-07-07 16:51:52
+* @LastEditTime: 2020-07-09 09:37:56
  */
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Map,is } from "immutable";
+
 class PureComponent extends Component {
   shouldComponentUpdate(newProps) {
     return !shallowEqual(this.props, newProps);
