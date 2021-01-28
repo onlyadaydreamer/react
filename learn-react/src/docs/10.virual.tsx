@@ -6,7 +6,13 @@ let style = { color: 'red', fontSize: '25px' };
         hello
     </h1>
 ) */
-let element: ReactElement = React.createElement('h1', {
-    className: 'title', style
-}, 'hello', 'world');
+let element: ReactElement = React.createElement(
+  'h1',
+  {
+    className: 'title',
+    style,
+  },
+  'hello',
+  'world'
+);
 ReactDOM.render(element, document.getElementById('root')!);

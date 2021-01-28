@@ -7,9 +7,9 @@ import ReactDOM from '../lib/react-dom';
     return React.createElement('h1', { className: 'title' }, props.title);
 } */
 class Welcome extends React.Component {
-    render() {
-        return React.createElement('h1', { className: 'title' }, this.props.title);
-    }
+  render() {
+    return React.createElement('h1', { className: 'title' }, this.props.title);
+  }
 }
 
 let element = React.createElement(Welcome, { title: '标题' });
