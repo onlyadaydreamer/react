@@ -1,4 +1,4 @@
-import { ReactElement, FunctionComponent, ClassComponent } from './react';
+import { ReactElement, FunctionComponent, ClassComponent } from '.';
 /**
  *
  * @param type React元素的类型

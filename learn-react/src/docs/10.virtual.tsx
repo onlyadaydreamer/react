@@ -1,5 +1,5 @@
 import React, { ReactElement } from '../lib/react';
-import ReactDOM from '../lib/react-dom';
+import ReactDOM from '../lib/react-dom/react-dom';
 let style = { color: 'red', fontSize: '25px' };
 /* let element = (
     <h1 className="title" style={style}>
