@@ -24,10 +24,10 @@ export default function applyMiddleware<Ext, S>(
     //'AnyAction' is assignable to the constraint of type 'A'
     // Store<S, A>  dispatch: Dispatch<A>=><T extends A>(action: T) => T
     let store = createStore(reducer);
-    let dispatch: Dispatch<AnyAction>; //这个时候还是undefined
+    let dispatch: Dispatch<AnyAction> = store.dispatch; //这个时候还是undefined
     const middlewareAPI: MiddlewareAPI<Dispatch, S> = {
       getState: store.getState,
-      dispatch: (action) => dispatch(action), // 这个dispatch就是最终的那个dispatch函数，在下面被赋值
+      dispatch: (action) => dispatch(action),
     };
     // 如果只有两个中间件的写法：
     // middleware1 = middleware1(middlewareAPI);
@@ -46,8 +46,19 @@ export default function applyMiddleware<Ext, S>(
   };
 }
 
-// export function fn() {
-//   return (createStore: StoreCreator) => (reducer: Reducer): Store => {
-//     return {} as Store;
-//   };
+// export default function applyMiddleware(...middlewares) {
+//   return (createStore) => (reducer, preloadedState, enhancer) => {
+//     var store = createStore(reducer, preloadedState, enhancer);
+//     var dispatch = store.dispatch;
+//     var chain = [];
+
+//     var middlewareAPI = {
+//       getState: store.getState,
+//       dispatch: (action) => dispatch(action)
+//     };
+//     chain = middlewares.map(middleware => middleware(middlewareAPI));
+//     dispatch = compose(...chain)(store.dispatch);
+
+//     return {...store, dispatch}
+//   }
 // }
